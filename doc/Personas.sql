@@ -49,8 +49,7 @@ CREATE TABLE Jockey (
   Peso double NOT NULL, 
   NombreCategoria varchar(100) NOT NULL,
   PRIMARY KEY (DNI, NumeroRol),
-  INDEX (TipoLicenciaJockey, NumeroLicenciaJockey),
-  UNIQUE (TipoLicenciaJockey, NumeroLicenciaJockey),
+  INDEX (NumeroLicenciaJockey, TipoLicenciaJockey),
   CONSTRAINT FK_Jockey_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol),
   CONSTRAINT FK_Jockey_NombreCategoria FOREIGN KEY (NombreCategoria) REFERENCES Categoria(NombreCategoria)
 );
