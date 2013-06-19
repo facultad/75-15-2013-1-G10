@@ -25,7 +25,7 @@ CREATE TABLE Encuentro (
   FechaEncuentro date NOT NULL,
   NumeroEncuentro int NOT NULL,
   INDEX (FechaEncuentro),
-  PRIMARY KEY (NombreHipodromo, FechaEncuentro),
+  PRIMARY KEY (FechaEncuentro),
   CONSTRAINT FK_Encuentro_NombreHipodromo FOREIGN KEY (NombreHipodromo) REFERENCES Hipodromo(NombreHipodromo)
 );
 
