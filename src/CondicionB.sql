@@ -1,5 +1,7 @@
-//b) Todo caballo de 5 y 6 años que no hayan ganado. Peso 5 años 57 kilos, 6 años 55 kilos. (Para jockeys y jockeys
-//aprendices con licencia de Palermo ó San Isidro que hayan ganado hasta 20 carreras desde el 1o de abril de 2012).
+/* Todo caballo de 5 y 6 años que no hayan ganado. Peso 5 años 57 kilos, 
+6 años 55 kilos. 
+(Para jockeys y jockeys aprendices con licencia de Palermo o San Isidro que 
+hayan ganado hasta 20 carreras desde el 1o de abril de 2012).*/
 
 SELECT 
     'OK'

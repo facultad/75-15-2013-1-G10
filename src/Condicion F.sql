@@ -15,7 +15,7 @@ where
       J1.Peso <= 56
   ) and
   /*(con exclusión de yeguas)*/
-  E.Genero = 'H' and
+  E.Genero = 'M' and
   /*que no hayan ganado*/
   not exists(
     select 'Ganó'

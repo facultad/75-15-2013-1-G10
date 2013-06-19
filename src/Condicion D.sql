@@ -37,7 +37,7 @@ where
     ) )
   ) and
   /*(con exclusión de yeguas)*/
-  E.Genero = 'H' and
+  E.Genero = 'M' and
   /*no hayan clasificado 1º, 2º, 3º o 4º en los Hipódromos de Palermo ó 
   San Isidro en sus tres últimas actuaciones.*/
   not exists(
