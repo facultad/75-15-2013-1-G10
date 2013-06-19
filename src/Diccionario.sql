@@ -210,10 +210,12 @@ CREATE TABLE Jockey (
   NumeroLicenciaJockey int NOT NULL,
   Peso double NOT NULL, 
   NombreCategoria varchar(100) NOT NULL,
+  HipodromoLicencia varchar(100) NOT NULL,
   PRIMARY KEY (DNI, NumeroRol),
   INDEX (NumeroLicenciaJockey, TipoLicenciaJockey),
   CONSTRAINT FK_Jockey_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol),
-  CONSTRAINT FK_Jockey_NombreCategoria FOREIGN KEY (NombreCategoria) REFERENCES Categoria(NombreCategoria)
+  CONSTRAINT FK_Jockey_NombreCategoria FOREIGN KEY (NombreCategoria) REFERENCES Categoria(NombreCategoria),
+  CONSTRAINT FK_Jockey_HipodromoLicencia FOREIGN KEY (HipodromoLicencia) REFERENCES Hipodromo(NombreHipodromo)
 );
 
 CREATE TABLE Possee (
