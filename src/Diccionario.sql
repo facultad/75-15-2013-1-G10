@@ -8,7 +8,7 @@ CREATE TABLE Pista (
   NombreHipodromo varchar(100) NOT NULL,
   TipoPista tinyint NOT NULL,
   CantidadAndariveles tinyint NOT NULL,
-  PRIMARY KEY (NumeroPista),
+  PRIMARY KEY (NumeroPista, NombreHipodromo),
   CONSTRAINT FK_Pista_NombreHipodromo FOREIGN KEY (NombreHipodromo) REFERENCES Hipodromo(NombreHipodromo)
 );
 
@@ -26,6 +26,7 @@ CREATE TABLE Encuentro (
   NumeroEncuentro int NOT NULL,
   INDEX (FechaEncuentro),
   PRIMARY KEY (FechaEncuentro),
+  UNIQUE (NombreHipodromo, NumeroEncuentro),
   CONSTRAINT FK_Encuentro_NombreHipodromo FOREIGN KEY (NombreHipodromo) REFERENCES Hipodromo(NombreHipodromo)
 );
 
@@ -153,6 +154,8 @@ CREATE TABLE ParticipacionCarrera (
   PesoEquino double NOT NULL,
   INDEX (NumeroLicenciaJockey, TipoLicenciaJockey),
   PRIMARY KEY (FechaEncuentro, NumeroCarrera, NumeroAndarivel),
+  UNIQUE (FechaEncuentro, NumeroCarrera, NumeroLicenciaJockey, TipoLicenciaJockey),
+  UNIQUE (FechaEncuentro, NumeroCarrera, NumeroEquino),
   CONSTRAINT FK_ParticipacionCarrera_Carrera FOREIGN KEY (FechaEncuentro, NumeroCarrera) REFERENCES Carrera(FechaEncuentro, NumeroCarrera),
   CONSTRAINT FK_ParticipacionCarrera_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino),
   CONSTRAINT FK_ParticipacionCarrera_Jockey FOREIGN KEY (NumeroLicenciaJockey, TipoLicenciaJockey) REFERENCES Jockey(NumeroLicenciaJockey, TipoLicenciaJockey),
@@ -195,6 +198,7 @@ CREATE TABLE Entrenador (
   NumeroRol int NOT NULL,
   NumeroLicenciaEntrenador int NOT NULL,
   PRIMARY KEY (DNI, NumeroRol),
+  UNIQUE (NumeroLicenciaEntrenador),
   CONSTRAINT FK_Entrenador_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol)
 );
 
@@ -211,8 +215,8 @@ CREATE TABLE Jockey (
   Peso double NOT NULL, 
   NombreCategoria varchar(100) NOT NULL,
   HipodromoLicencia varchar(100) NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol),
-  INDEX (NumeroLicenciaJockey, TipoLicenciaJockey),
+  PRIMARY KEY  (TipoLicenciaJockey, NumeroLicenciaJockey),
+  UNIQUE (DNI, NumeroRol),
   CONSTRAINT FK_Jockey_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol),
   CONSTRAINT FK_Jockey_NombreCategoria FOREIGN KEY (NombreCategoria) REFERENCES Categoria(NombreCategoria),
   CONSTRAINT FK_Jockey_HipodromoLicencia FOREIGN KEY (HipodromoLicencia) REFERENCES Hipodromo(NombreHipodromo)
