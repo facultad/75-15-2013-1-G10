@@ -38,40 +38,28 @@ INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) 
 INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) VALUES (5, 'E');
 INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) VALUES (6, 'F');
 
+INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera)
+VALUES ();
+
 INSERT INTO Pelaje (NombrePelaje) VALUES ('Marron');
 INSERT INTO Pelaje (NombrePelaje) VALUES ('Negro');
 INSERT INTO Pelaje (NombrePelaje) VALUES ('Marron y Negro');
 
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (1, 'H', 'Marron y Negro', '02-02-1980', 450);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (2, 'M', 'Marron y Negro', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (3, 'M', 'Marron', '02-02-1980', 390);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (4, 'H', 'Marron', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (5, 'H', 'Negro', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (6, 'H', 'Marron y Negro', '02-02-1980', 400);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (7, 'M', 'Marron', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (8, 'M', 'Negro', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (9, 'M', 'Negro', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (10, 'H', 'Marron', '02-02-1980', 400);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (11, 'M', 'Marron', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (12, 'M', 'Marron', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (13, 'H', 'Marron', '02-02-1980', 390);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (14, 'M', 'Marron', '02-02-1980', 420);
-INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso)
-VALUES (15, 'H', 'Marron y Negro', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (1, 'H', 'Marron y Negro', '02-02-1980', 450);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (2, 'M', 'Marron y Negro', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (3, 'M', 'Marron', '02-02-1980', 390);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (4, 'H', 'Marron', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (5, 'H', 'Negro', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (6, 'H', 'Marron y Negro', '02-02-1980', 400);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (7, 'M', 'Marron', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (8, 'M', 'Negro', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (9, 'M', 'Negro', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (10, 'H', 'Marron', '02-02-1980', 400);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (11, 'M', 'Marron', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (12, 'M', 'Marron', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (13, 'H', 'Marron', '02-02-1980', 390);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (14, 'M', 'Marron', '02-02-1980', 420);
+INSERT INTO Equino (NumeroEquino, Genero, NombrePelaje, FechaNacimiento, Peso) VALUES (15, 'H', 'Marron y Negro', '02-02-1980', 420);
 
 INSERT INTO Stud (NombreStud) VALUES ('Stud de Sebastian');
 INSERT INTO Stud (NombreStud) VALUES ('Stud de Milton');
@@ -90,3 +78,82 @@ INSERT INTO ColorStud (NombreStud, Color) VALUES ('Stud de Milton', 'Negro');
 INSERT INTO ColorStud (NombreStud, Color) VALUES ('Stud de Agustin', 'Rojo');
 INSERT INTO ColorStud (NombreStud, Color) VALUES ('Stud de Yamila', 'Verde');
 
+INSERT INTO Gorro (NombreStud, DisenoGorro) VALUES ('Stud de Sebastian', 'Rayas Verticales');
+INSERT INTO Gorro (NombreStud, DisenoGorro) VALUES ('Stud de Milton', 'Rayas Diagonales');
+INSERT INTO Gorro (NombreStud, DisenoGorro) VALUES ('Stud de Agustin', 'Liso');
+INSERT INTO Gorro (NombreStud, DisenoGorro) VALUES ('Stud de Yamila', 'Cuadros');
+
+INSERT INTO ColorGorro (NombreStud, DisenoGorro, Color) VALUES ('Stud de Sebastian', 'Rayas Verticales', 'Azul');
+INSERT INTO ColorGorro (NombreStud, DisenoGorro, Color) VALUES ('Stud de Milton', 'Rayas Diagonales', 'Negro');
+INSERT INTO ColorGorro (NombreStud, DisenoGorro, Color) VALUES ('Stud de Agustin', 'Liso', 'Rojo');
+INSERT INTO ColorGorro (NombreStud, DisenoGorro, Color) VALUES ('Stud de Yamila', 'Cuadros', 'Verde');
+
+INSERT INTO Chaquetilla (NombreStud, DisenoChaquetilla) VALUES ('Stud de Sebastian', 'Rayas Verticales');
+INSERT INTO Chaquetilla (NombreStud, DisenoChaquetilla) VALUES ('Stud de Milton', 'Rayas Diagonales');
+INSERT INTO Chaquetilla (NombreStud, DisenoChaquetilla) VALUES ('Stud de Agustin', 'Liso');
+INSERT INTO Chaquetilla (NombreStud, DisenoChaquetilla) VALUES ('Stud de Yamila', 'Cuadros');
+
+INSERT INTO ColorChaquetilla (NombreStud, DisenoChaquetilla, Color) VALUES ('Stud de Sebastian', 'Rayas Verticales', 'Azul');
+INSERT INTO ColorChaquetilla (NombreStud, DisenoChaquetilla, Color) VALUES ('Stud de Milton', 'Rayas Diagonales', 'Negro');
+INSERT INTO ColorChaquetilla (NombreStud, DisenoChaquetilla, Color) VALUES ('Stud de Agustin', 'Liso', 'Rojo');
+INSERT INTO ColorChaquetilla (NombreStud, DisenoChaquetilla, Color) VALUES ('Stud de Yamila', 'Cuadros', 'Verde');
+
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (1, '02-02-2010', '02-02-2012', 'Stud de Sebastian');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (1, '03-03-2013', NULL, 'Stud de Sebastian');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (2, '02-02-2010', '02-02-2012', 'Stud de Yamila');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (3, '02-02-2010', '02-02-2012', 'Stud de Sebastian');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (4, '02-02-2010', '02-02-2012', 'Stud de Milton');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (5, '02-02-2010', '02-02-2012', 'Stud de Agustin');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (6, '02-02-2010', '02-02-2012', 'Stud de Milton');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (7, '02-02-2010', '02-02-2012', 'Stud de Agustin');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (8, '02-02-2010', '02-02-2012', 'Stud de Sebastian');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (9, '02-02-2010', NULL, 'Stud de Yamila');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (10, '02-02-2010', NULL, 'Stud de Agustin');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (11, '02-02-2010', NULL, 'Stud de Milton');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (12, '02-02-2010', NULL, 'Stud de Sebastian');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (13, '02-02-2010', NULL, 'Stud de Agustin');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (14, '02-02-2010', NULL, 'Stud de Milton');
+INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (15, '02-02-2010', NULL, 'Stud de Yamila');
+
+
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino) 
+VALUES ();
+
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (28293213, 'Juan', 'Zarazaza');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (29324321, 'Pepe', 'Zerezeze');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (17939292, 'Jorge', 'Zirizizi');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (19043832, 'Jose', 'Zorozozo');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (29432233, 'Juan', 'Zuruzuzu');
+
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (32092432, 'Juan', 'Papapapa');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (13218323, 'Pepe', 'Pepepepe');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (13244223, 'Jorge', 'Pipipipi');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (14940432, 'Jose', 'Popopopo');
+INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (29432211, 'Juan', 'Pupupupu');
+
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (28293213, 1, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (29324321, 2, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (17939292, 3, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (19043832, 4, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (29432233, 5, '02-02-2012', NULL);
+
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (32092432, 6, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (13218323, 7, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (13244223, 8, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (14940432, 9, '02-02-2012', NULL);
+INSERT INTO Rol (DNI, NumeroRol, FechaDesde, FechaHasta) VALUES (29432211, 10, '02-02-2012', NULL);
+
+INSERT INTO Categoria (NombreCategoria) VALUES ('Principiante');
+INSERT INTO Categoria (NombreCategoria) VALUES ('Intermedio');
+INSERT INTO Categoria (NombreCategoria) VALUES ('Experto');
+
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (28293213, 1, 'L1', 1, 57, 'Principiante', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29324321, 2, 'L1', 1, 59, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (17939292, 3, 'L2', 1, 56, 'Principiante', 'San Isidro');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (19043832, 4, 'L3', 1, 60, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29432233, 5, 'L3', 1, 57, 'Intermedio', 'San Isidro');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (32092432, 6, 'L3', 1, 57, 'Principiante', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (13218323, 7, 'L1', 1, 59, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (13244223, 8, 'L2', 1, 56, 'Principiante', 'San Isidro');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (14940432, 9, 'L1', 1, 60, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29432211, 10, 'L2', 1, 57, 'Intermedio', 'San Isidro');
