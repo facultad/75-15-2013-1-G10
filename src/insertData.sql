@@ -4,7 +4,7 @@ INSERT INTO Hipodromo (NombreHipodromo) VALUES ('San Isidro');
 INSERT INTO Pista (NumeroPista, NombreHipodromo, TipoPista,CantidadAndariveles) VALUES (1, 'Palermo', 'Grande', 6);
 INSERT INTO Pista (NumeroPista, NombreHipodromo, TipoPista,CantidadAndariveles) VALUES (2, 'Palermo', 'Chica', 4);
 INSERT INTO Pista (NumeroPista, NombreHipodromo, TipoPista,CantidadAndariveles) VALUES (1, 'San Isidro', 'Chica', 3);
-INSERT INTO Pista (NumeroPista, NombreHipodromo, TipoPista,CantidadAndariveles) VALUES (2, 'San Isidro', 'Grande', 6);
+INSERT INTO Pista (NumeroPista, NombreHipodromo, TipoPista,CantidadAndariveles) VALUES (2, 'San Isidro', 'Grande', 4);
 
 INSERT INTO Andarivel (NombreHipodromo, NumeroPista, NumeroAndarivel) VALUES ('Palermo', 1, 1);
 INSERT INTO Andarivel (NombreHipodromo, NumeroPista, NumeroAndarivel) VALUES ('Palermo', 1, 2);
@@ -29,7 +29,7 @@ INSERT INTO Andarivel (NombreHipodromo, NumeroPista, NumeroAndarivel) VALUES ('S
 INSERT INTO Encuentro (NombreHipodromo, FechaEncuentro, NumeroEncuentro) VALUES ('Palermo', '02-02-2013', 1);
 INSERT INTO Encuentro (NombreHipodromo, FechaEncuentro, NumeroEncuentro) VALUES ('Palermo', '03-03-2013', 2);
 INSERT INTO Encuentro (NombreHipodromo, FechaEncuentro, NumeroEncuentro) VALUES ('San Isidro', '04-04-2013', 1);
-INSERT INTO Encuentro (NombreHipodromo, FechaEncuentro, NumeroEncuentro) VALUES ('San Isidro', '05-05-2013', 2);
+INSERT INTO Encuentro (NombreHipodromo, FechaEncuentro, NumeroEncuentro) VALUES ('San Isidro', '05-05-2014', 2);
 
 INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) VALUES (1, 'A');
 INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) VALUES (2, 'B');
@@ -38,8 +38,11 @@ INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) 
 INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) VALUES (5, 'E');
 INSERT INTO CondicionInscripcion (IdCondicionInscripcion, DescripcionCondicion) VALUES (6, 'F');
 
-INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera)
-VALUES ();
+INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera) VALUES ('02-02-2013', 1, 1, 'H', 'Perdedores', 800, 'Bueno', 'Muy Bueno', 1, '18:00');
+INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera) VALUES ('03-03-2013', 2, 2, 'H', 'Ganadores', 800, 'Bueno', 'Regular', 5, '15:00');
+INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera) VALUES ('03-03-2013', 1, 3, 'H', 'Perdedores', 800, 'Regular', 'Regular', 2, '10:00');
+INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera) VALUES ('04-04-2013', 2, 4, 'H', 'Perdedores', 800, 'Regular', 'Bueno', 3, '8:00');
+INSERT INTO Carrera (FechaEncuentro, NumeroPista, NumeroCarrera, GeneroCarrera, TipoCarrera, DistanciaCarrera, EstadoTiempo, EstadoPista, IdCondicionInscripcion, HoraCarrera) VALUES ('04-04-2013', 2, 5, 'M', 'Ganadores', 800, 'Muy Bueno', 'Muy Bueno', 4, '18:00');
 
 INSERT INTO Pelaje (NombrePelaje) VALUES ('Marron');
 INSERT INTO Pelaje (NombrePelaje) VALUES ('Negro');
@@ -115,9 +118,31 @@ INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES
 INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (14, '02-02-2010', NULL, 'Stud de Milton');
 INSERT INTO StudEquino (NumeroEquino, FechaDesde, FechaHasta, NombreStud) VALUES (15, '02-02-2010', NULL, 'Stud de Yamila');
 
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('02-02-2013', 1, 1, 43, 1, 'L1', 1, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('02-02-2013', 1, 2, 42, 2, 'L1', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('02-02-2013', 1, 3, 44, 3, 'L2', 1, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('02-02-2013', 1, 4, 39, 4, 'L1', 3, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('02-02-2013', 1, 5, 41, 5, 'L2', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('02-02-2013', 1, 6, 40, 6, 'L3', 1, NULL, NULL, 10, 0.2, 57, 462);
 
-INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino) 
-VALUES ();
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 2, 1, 42, 5, 'L2', 1, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 2, 2, 40, 6, 'L1', 3, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 2, 3, 43, 7, 'L3', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 2, 4, 41, 8, 'L3', 1, NULL, NULL, 10, 0.2, 57, 462);
+
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 3, 1, 46, 9, 'L1', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 3, 2, 41, 10, 'L2', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('03-03-2013', 3, 3, 42, 11, 'L3', 1, NULL, NULL, 10, 0.2, 57, 462);
+
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 4, 1, 45, 12, 'L2', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 4, 2, 43, 13, 'L1', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 4, 3, 42, 14, 'L1', 3, NULL, NULL, 10, 0.2, 57, 462);
+
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 5, 1, 40, 15, 'L1', 1, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 5, 2, 50, 9, 'L1', 2, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 5, 3, 43, 10, 'L3', 1, NULL, NULL, 10, 0.2, 57, 462);
+INSERT INTO ParticipacionCarrera (FechaEncuentro, NumeroCarrera, NumeroAndarivel, TiempoCarrera, NumeroEquino, NumeroLicenciaJockey, TipoLicenciaJockey, DiseñoChaquetilla, DiseñoGorro, LastreJockey, FechaInscripcion, DiferenciaCuerpos, PesoJockey, PesoEquino)  VALUES ('04-04-2013', 5, 4, 35, 11, 'L2', 1, NULL, NULL, 10, 0.2, 57, 462);
+
 
 INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (28293213, 'Juan', 'Zarazaza');
 INSERT INTO Persona (DNI, Nombre, Apellido) VALUES (29324321, 'Pepe', 'Zerezeze');
@@ -148,12 +173,12 @@ INSERT INTO Categoria (NombreCategoria) VALUES ('Intermedio');
 INSERT INTO Categoria (NombreCategoria) VALUES ('Experto');
 
 INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (28293213, 1, 'L1', 1, 57, 'Principiante', 'Palermo');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29324321, 2, 'L1', 1, 59, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29324321, 2, 'L1', 2, 59, 'Experto', 'Palermo');
 INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (17939292, 3, 'L2', 1, 56, 'Principiante', 'San Isidro');
 INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (19043832, 4, 'L3', 1, 60, 'Experto', 'Palermo');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29432233, 5, 'L3', 1, 57, 'Intermedio', 'San Isidro');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (32092432, 6, 'L3', 1, 57, 'Principiante', 'Palermo');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (13218323, 7, 'L1', 1, 59, 'Experto', 'Palermo');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (13244223, 8, 'L2', 1, 56, 'Principiante', 'San Isidro');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (14940432, 9, 'L1', 1, 60, 'Experto', 'Palermo');
-INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29432211, 10, 'L2', 1, 57, 'Intermedio', 'San Isidro');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29432233, 5, 'L3', 2, 57, 'Intermedio', 'San Isidro');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (32092432, 6, 'L3', 3, 57, 'Principiante', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (13218323, 7, 'L1', 3, 59, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (13244223, 8, 'L2', 2, 56, 'Principiante', 'San Isidro');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (14940432, 9, 'L1', 4, 60, 'Experto', 'Palermo');
+INSERT INTO Jockey (DNI, NumeroRol, TipoLicenciaJockey, NumeroLicenciaJockey, Peso, NombreCategoria, HipodromoLicencia) VALUES (29432211, 10, 'L2', 3, 57, 'Intermedio', 'San Isidro');
