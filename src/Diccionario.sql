@@ -8,7 +8,7 @@ CREATE TABLE Pista (
   NombreHipodromo varchar(100) NOT NULL,
   TipoPista tinyint NOT NULL,
   CantidadAndariveles tinyint NOT NULL,
-  PRIMARY KEY (NumeroPista, NombreHipodromo),
+  PRIMARY KEY (NumeroPista),
   CONSTRAINT FK_Pista_NombreHipodromo FOREIGN KEY (NombreHipodromo) REFERENCES Hipodromo(NombreHipodromo)
 );
 
@@ -137,32 +137,6 @@ CREATE TABLE StudEquino (
   CONSTRAINT FK_StudEquino_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino)
 );
 
-CREATE TABLE ParticipacionCarrera (
-  FechaEncuentro date NOT NULL, 
-  NumeroCarrera int NOT NULL, 
-  NumeroAndarivel tinyint NOT NULL, 
-  TiempoCarrera double NULL, 
-  NumeroEquino int NULL, 
-  NumeroLicenciaJockey int NOT NULL,
-  TipoLicenciaJockey varchar(100) NOT NULL, 
-  DiseñoChaquetilla varchar(100) NULL, 
-  DiseñoGorro varchar(100) NULL, 
-  LastreJockey tinyint NOT NULL DEFAULT 0,
-  FechaInscripcion date NOT NULL, 
-  DiferenciaCuerpos decimal NOT NULL DEFAULT 0, 
-  PesoJockey double NOT NULL, 
-  PesoEquino double NOT NULL,
-  INDEX (NumeroLicenciaJockey, TipoLicenciaJockey),
-  PRIMARY KEY (FechaEncuentro, NumeroCarrera, NumeroAndarivel),
-  UNIQUE (FechaEncuentro, NumeroCarrera, NumeroLicenciaJockey, TipoLicenciaJockey),
-  UNIQUE (FechaEncuentro, NumeroCarrera, NumeroEquino),
-  CONSTRAINT FK_ParticipacionCarrera_Carrera FOREIGN KEY (FechaEncuentro, NumeroCarrera) REFERENCES Carrera(FechaEncuentro, NumeroCarrera),
-  CONSTRAINT FK_ParticipacionCarrera_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino),
-  CONSTRAINT FK_ParticipacionCarrera_Jockey FOREIGN KEY (NumeroLicenciaJockey, TipoLicenciaJockey) REFERENCES Jockey(NumeroLicenciaJockey, TipoLicenciaJockey),
-  CONSTRAINT FK_ParticipacionCarrera_DiseñoChaquetilla FOREIGN KEY (DiseñoChaquetilla) REFERENCES Chaquetilla(DiseñoChaquetilla),
-  CONSTRAINT FK_ParticipacionCarrera_DiseñoGorro FOREIGN KEY (DiseñoGorro) REFERENCES Gorro(DiseñoGorro)
-);
-
 CREATE TABLE Persona (
   DNI int NOT NULL,
   Nombre varchar(100) NOT NULL,
@@ -248,3 +222,30 @@ CREATE TABLE Entrena (
   CONSTRAINT FK_Entrena_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Entrenador(DNI, NumeroRol),
   CONSTRAINT FK_Entrena_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino (NumeroEquino)
 );
+
+CREATE TABLE ParticipacionCarrera (
+  FechaEncuentro date NOT NULL, 
+  NumeroCarrera int NOT NULL, 
+  NumeroAndarivel tinyint NOT NULL, 
+  TiempoCarrera double NULL, 
+  NumeroEquino int NULL, 
+  NumeroLicenciaJockey int NOT NULL,
+  TipoLicenciaJockey varchar(100) NOT NULL, 
+  DiseñoChaquetilla varchar(100) NULL, 
+  DiseñoGorro varchar(100) NULL, 
+  LastreJockey tinyint NOT NULL DEFAULT 0,
+  FechaInscripcion date NOT NULL, 
+  DiferenciaCuerpos decimal NOT NULL DEFAULT 0, 
+  PesoJockey double NOT NULL, 
+  PesoEquino double NOT NULL,
+  INDEX (NumeroLicenciaJockey, TipoLicenciaJockey),
+  PRIMARY KEY (FechaEncuentro, NumeroCarrera, NumeroAndarivel),
+  UNIQUE (FechaEncuentro, NumeroCarrera, NumeroLicenciaJockey, TipoLicenciaJockey),
+  UNIQUE (FechaEncuentro, NumeroCarrera, NumeroEquino),
+  CONSTRAINT FK_ParticipacionCarrera_Carrera FOREIGN KEY (FechaEncuentro, NumeroCarrera) REFERENCES Carrera(FechaEncuentro, NumeroCarrera),
+  CONSTRAINT FK_ParticipacionCarrera_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino),
+  CONSTRAINT FK_ParticipacionCarrera_Jockey FOREIGN KEY (NumeroLicenciaJockey, TipoLicenciaJockey) REFERENCES Jockey(NumeroLicenciaJockey, TipoLicenciaJockey),
+  CONSTRAINT FK_ParticipacionCarrera_DiseñoChaquetilla FOREIGN KEY (DiseñoChaquetilla) REFERENCES Chaquetilla(DiseñoChaquetilla),
+  CONSTRAINT FK_ParticipacionCarrera_DiseñoGorro FOREIGN KEY (DiseñoGorro) REFERENCES Gorro(DiseñoGorro)
+);
+
