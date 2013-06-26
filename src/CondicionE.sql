@@ -1,13 +1,20 @@
-//e) Yeguas de 3 años que no hayan ganado. Peso 56 kilos. (No podrán inscribirse las ejemplares pertenecientes a las
-//caballerizas que ocupen los 12 primeros puestos en la estadística por sumas ganadas desde el 1o de marzo de 2012)
+/*
+e) Yeguas de 3 años que no hayan ganado. Peso 56 kilos. (No podrán 
+inscribirse las ejemplares pertenecientes a las caballerizas que ocupen 
+los 12 primeros puestos en la estadística por sumas ganadas desde el 1o de 
+marzo de 2012)
+*/
 
+set @NumeroEquino = 0;
+set @TipoLicenciaJockey = '';
+set @NumeroLicenciaJockey= '';
 
 SELECT 
     'OK'
 FROM 
     Equino, Jockey, StudEquino
 WHERE 
-    Eqino.NumeroEquino = @NumeroEquino
+    Equino.NumeroEquino = @NumeroEquino
     AND Jockey.NumeroLicenciaJockey = @NumeroLicenciaJockey
     AND Jockey.TipoLicenciaJockey = @TipoLicenciaJockey
     AND Equino.Genero = 'H'
@@ -22,7 +29,9 @@ WHERE
 			PC1.TiempoCarrera = (
 				SELECT MIN(TiempoCarrera) 
 				FROM ParticipacionCarrera PC3
-				WHERE PC3.NumeroCarrra = PC1.NumeroCarrra AND PC3.FechaEncuentro = PC1.FechaEncuentro
+				WHERE 
+          PC3.NumeroCarrra = PC1.NumeroCarrra AND
+          PC3.FechaEncuentro = PC1.FechaEncuentro
 			)
 		GROUP BY SE2.NombreStud
 		HAVING COUNT(*) > (
