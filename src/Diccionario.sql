@@ -1,3 +1,9 @@
+DROP DATABASE IF EXISTS hipodromo;
+
+CREATE DATABASE hipodromo DEFAULT CHARACTER SET utf8;
+
+USE hipodromo;
+
 CREATE TABLE Hipodromo (
   NombreHipodromo varchar(100) NOT NULL,
   PRIMARY KEY (NombreHipodromo)
@@ -40,13 +46,13 @@ CREATE TABLE Carrera (
   FechaEncuentro date NOT NULL,
   NumeroPista tinyint NOT NULL,
   NumeroCarrera int NOT NULL,
-  GeneroCarrera varchar(1) NULL,
-  TipoCarrera varchar(100) NULL,
-  DistanciaCarrera int NULL,
+  GeneroCarrera varchar(1) NOT NULL,
+  TipoCarrera varchar(100) NOT NULL,
+  DistanciaCarrera int NOT NULL,
   EstadoTiempo varchar(255) NULL,
   EstadoPista varchar(255) NULL,
   IdCondicionInscripcion int NOT NULL, 
-  HoraCarrera time NULL,
+  HoraCarrera time NOT NULL,
   PRIMARY KEY (FechaEncuentro, NumeroCarrera),
   CONSTRAINT FK_Carrera_FechaEncuentro FOREIGN KEY (FechaEncuentro) REFERENCES Encuentro(FechaEncuentro),
   CONSTRAINT FK_Carrera_NumeroPista FOREIGN KEY (NumeroPista) REFERENCES Pista(NumeroPista),
@@ -60,8 +66,8 @@ CREATE TABLE Pelaje (
 
 CREATE TABLE Equino (
   NumeroEquino int NOT NULL,
-  Genero varchar(1) NULL,
-  NombrePelaje varchar(100) NULL,
+  Genero varchar(1) NOT NULL,
+  NombrePelaje varchar(100) NOT NULL,
   FechaNacimiento date NOT NULL, 
   Peso int NOT NULL,
   PRIMARY KEY (NumeroEquino),
@@ -132,7 +138,7 @@ CREATE TABLE StudEquino (
   NumeroEquino int NOT NULL, 
   FechaDesde date NOT NULL, 
   FechaHasta date NOT NULL, 
-  NombreStud varchar(100) NULL,
+  NombreStud varchar(100) NOT NULL,
   PRIMARY KEY (NumeroEquino, FechaDesde),
   UNIQUE (NumeroEquino, FechaHasta),
   CONSTRAINT FK_StudEquino_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino),
@@ -194,7 +200,7 @@ CREATE TABLE Jockey (
   CONSTRAINT FK_Jockey_HipodromoLicencia FOREIGN KEY (HipodromoLicencia) REFERENCES Hipodromo(NombreHipodromo)
 );
 
-CREATE TABLE Possee (
+CREATE TABLE Posee (
   NumeroRol int NOT NULL, 
   NumeroEquino int NOT NULL,
   PRIMARY KEY (NumeroRol, NumeroEquino),
