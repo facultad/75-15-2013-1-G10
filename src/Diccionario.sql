@@ -200,7 +200,7 @@ CREATE TABLE Jockey (
   CONSTRAINT FK_Jockey_HipodromoLicencia FOREIGN KEY (HipodromoLicencia) REFERENCES Hipodromo(NombreHipodromo)
 );
 
-CREATE TABLE Possee (
+CREATE TABLE Posee (
   NumeroRol int NOT NULL, 
   NumeroEquino int NOT NULL,
   PRIMARY KEY (NumeroRol, NumeroEquino),
