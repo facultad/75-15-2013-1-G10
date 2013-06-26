@@ -10,6 +10,11 @@ que habiendo corrido no hayan clasificado 2º, 3º ó 4º en los Hipódromos de
   últimas cinco (5) actuaciones hayan participado en carreras clásicas). 
 Peso 4 años 57 kilos; 5 años 55 kilos.
 */
+
+set @NumeroEquino = 0;
+set @TipoLicenciaJockey = '';
+set @NumeroLicenciaJockey= '';
+
 select 'Pasa condición'
 from Equino as E
 where
