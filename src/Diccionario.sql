@@ -1,9 +1,3 @@
-drop database hipodromo;
-
-create database hipodromo default character set utf8;
-
-use hipodromo;
-
 CREATE TABLE Hipodromo (
   NombreHipodromo varchar(100) NOT NULL,
   PRIMARY KEY (NombreHipodromo)
