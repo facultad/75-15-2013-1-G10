@@ -11,7 +11,7 @@ que habiendo corrido no hayan clasificado 2º, 3º ó 4º en los Hipódromos de
 Peso 4 años 57 kilos; 5 años 55 kilos.
 */
 select 'Pasa condición'
-from equino as E
+from Equino as E
 where
   E.NumeroEquino = @NumeroEquino and
   ( 
@@ -48,9 +48,9 @@ where
     from ParticipacionCarrera PC0, Encuentro EN
     where
       PC0.NumeroEquino = E.NumeroEquino and
-      PCO.FechaEncuentro = EN.FechaEncuentro and
+      PC0.FechaEncuentro = EN.FechaEncuentro and
       EN.NombreHipodromo in ('Palermo', 'San Isidro') and
-      /*La cantidad de carreras en las que participó el equino con fecha 
+      /*La cantidad de carreras en las que participó el Equino con fecha 
       igual o posterior a la fecha del encuentro de la carrera estudiada sea
       como mucho 3*/
       3 >= (
@@ -84,8 +84,8 @@ where
       PC10.NumeroCarrera = CA.NumeroCarrera and
       PC10.NumeroEquino = E.NumeroEquino and
       CA.TipoCarrera = 'Clásica' and
-      PC1O.FechaEncuentro = EN.FechaEncuentro and
-      /*La cantidad de carreras en las que participó el equino con fecha 
+      PC10.FechaEncuentro = CA.FechaEncuentro and
+      /*La cantidad de carreras en las que participó el Equino con fecha 
       igual o posterior a la fecha del encuentro de la carrera estudiada sea
       como mucho 5*/
       5 >= (
