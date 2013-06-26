@@ -1,6 +1,6 @@
 SELECT 
     Andarivel.NumeroAndarivel,
-    Equino.NumeroEquino,
+    Equino.NombreEquino,
     ParticipacionCarrera.PesoEquino,
     PersonaJockey.Nombre,
     Jockey.Peso,
