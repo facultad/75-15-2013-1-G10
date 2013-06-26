@@ -1,7 +1,7 @@
 /*Yeguas de 5 y 6 aÃ±os que no hayan ganado. Peso 5 aÃ±os 57 kilos, 
 6 aÃ±os 55 kilos.*/
-select 'Pasa condición'
-from equino as E
+select 'Pasa condicion'
+from Equino as E
 where
   E.NumeroEquino = @NumeroEquino and
   E.Genero = 'H' and
@@ -31,7 +31,7 @@ where
   not exists(
     select 'Ganó'
     from ParticipacionCarrera PC0
-      PC0.NumeroEquino = E.NumeroEquino and
+      where PC0.NumeroEquino = E.NumeroEquino and
       /*0 caballos tienen mejor tiempo que el caballo en estudio
       en la carrera en estudio: Esto significa que ganó.*/
       0 = (
