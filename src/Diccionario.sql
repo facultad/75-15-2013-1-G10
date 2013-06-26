@@ -68,6 +68,7 @@ CREATE TABLE Equino (
   NumeroEquino int NOT NULL,
   Genero varchar(1) NOT NULL,
   NombrePelaje varchar(100) NOT NULL,
+  NombreEquino varchar(100) NOT NULL,
   FechaNacimiento date NOT NULL, 
   Peso int NOT NULL,
   PRIMARY KEY (NumeroEquino),
