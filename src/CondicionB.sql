@@ -4,26 +4,25 @@
 hayan ganado hasta 20 carreras desde el 1o de abril de 2012).*/
 
 SELECT 
-    'OK'
+    'Pasa condicion'
 FROM 
     Equino, Jockey
 WHERE 
-    Eqino.NumeroEquino = @NumeroEquino
+    Equino.NumeroEquino = @NumeroEquino
     AND Jockey.NumeroLicenciaJockey = @NumeroLicenciaJockey
     AND Jockey.TipoLicenciaJockey = @TipoLicenciaJockey
     AND Equino.NumeroEquino NOT IN (
         SELECT ParticipacionCarrera2.NumeroEquino 
         FROM ParticipacionCarrera AS ParticipacionCarrera2
         WHERE TiempoCarrera = (
-                SELECT MAX(ParticipacionCarrera3.TiempoCarrera) 
-                FROM ParticipacionCarrera AS ParticipacionCarrera3
-                WHERE 
-                    ParticipacionCarrera2.FechaEncuentro = ParticipacionCarrera3.FechaEncuentro
-                    AND ParticipacionCarrera2.NumeroCarrera = ParticipacionCarrera3.FechaEncuentro
-            )
+            SELECT MAX(ParticipacionCarrera3.TiempoCarrera) 
+            FROM ParticipacionCarrera AS ParticipacionCarrera3
+            WHERE 
+                ParticipacionCarrera2.FechaEncuentro = ParticipacionCarrera3.FechaEncuentro
+                AND ParticipacionCarrera2.NumeroCarrera = ParticipacionCarrera3.FechaEncuentro
         )
     )
-    AND (Jockey.Peso > 57 AND FLOOR(DATEDIFF(NOW(), Equino.FechaNacimiento) / 365) = 5 OR (Jockey.peso > 55 AND FLOOR(DATEDIFF(NOW(), Equino.FechaNacimiento) / 365) = 6)
+    AND (Jockey.Peso > 57 AND FLOOR(DATEDIFF(NOW(), Equino.FechaNacimiento) / 365) = 5 OR (Jockey.peso > 55 AND FLOOR(DATEDIFF(NOW(), Equino.FechaNacimiento) / 365) = 6))
     AND (Jockey.HipodromoLicencia = "Palermo" OR Jockey.HipodromoLicencia != "San Isidro")
     AND Jockey.NombreCategoria = "Aprendiz"
     AND EXISTS (
