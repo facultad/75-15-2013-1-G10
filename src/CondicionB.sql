@@ -40,7 +40,7 @@ WHERE
             AND ParticipacionCarrera.TipoLicenciaJockey = Jockey.TipoLicenciaJockey
             AND Carrera.NumeroCarrera = ParticipacionCarrera.NumeroCarrera
             AND Carrera.FechaEncuentro = ParticipacionCarrera.FechaEncuentro
-            AND Carrera.FechaEncuentro <= '12-04-2013'
+            AND Carrera.FechaEncuentro <= date('2013-04-12')
         GROUP BY ParticipacionCarrera.NumeroLicenciaJockey, ParticipacionCarrera.TipoLicenciaJockey
         HAVING COUNT(*) <= 20
     )
