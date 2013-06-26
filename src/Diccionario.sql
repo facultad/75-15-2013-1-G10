@@ -99,8 +99,7 @@ CREATE TABLE ColorStud (
 CREATE TABLE Gorro (
   NombreStud varchar(100) NOT NULL,
   DisenoGorro varchar(100) NOT NULL,
-  PRIMARY KEY (NombreStud, DisenoGorro),
-  INDEX (DisenoGorro),
+  PRIMARY KEY (DisenoGorro),
   CONSTRAINT FK_Gorro_NombreStud FOREIGN KEY (NombreStud) REFERENCES Stud(NombreStud)
 );
 
@@ -114,10 +113,9 @@ CREATE TABLE ColorGorro (
 );
 
 CREATE TABLE Chaquetilla (
-  NombreStud varchar(100) NOT NULL,
   DisenoChaquetilla varchar(100) NOT NULL,
-  PRIMARY KEY (NombreStud, DisenoChaquetilla),
-  INDEX (DisenoChaquetilla),
+  NombreStud varchar(100) NOT NULL,
+  PRIMARY KEY (DisenoChaquetilla),
   CONSTRAINT FK_Chaquetilla_NombreStud FOREIGN KEY (NombreStud) REFERENCES Stud(NombreStud)
 );
 
@@ -133,9 +131,10 @@ CREATE TABLE ColorChaquetilla (
 CREATE TABLE StudEquino (
   NumeroEquino int NOT NULL, 
   FechaDesde date NOT NULL, 
-  FechaHasta date NULL, 
+  FechaHasta date NOT NULL, 
   NombreStud varchar(100) NULL,
   PRIMARY KEY (NumeroEquino, FechaDesde),
+  UNIQUE (NumeroEquino, FechaHasta),
   CONSTRAINT FK_StudEquino_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino),
   CONSTRAINT FK_StudEquino_NombreStud FOREIGN KEY (NombreStud) REFERENCES Stud(NombreStud)
 );
@@ -152,31 +151,28 @@ CREATE TABLE Rol (
   NumeroRol int NOT NULL, 
   FechaDesde date NOT NULL,
   FechaHasta date NULL,
-  PRIMARY KEY (DNI, NumeroRol),
+  PRIMARY KEY (NumeroRol),
   CONSTRAINT FK_Rol_DNI FOREIGN KEY (DNI) REFERENCES Persona(DNI)
 );
 
 CREATE TABLE Propietario (
-  DNI int NOT NULL,
   NumeroRol int NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol),
-  CONSTRAINT FK_Propietario_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol)
+  PRIMARY KEY (NumeroRol),
+  CONSTRAINT FK_Propietario_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Rol(NumeroRol)
 );
 
 CREATE TABLE Cuidador (
-  DNI int NOT NULL,
   NumeroRol int NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol),
-  CONSTRAINT FK_Cuidador_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol)
+  PRIMARY KEY (NumeroRol),
+  CONSTRAINT FK_Cuidador_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Rol(NumeroRol)
 );
 
 CREATE TABLE Entrenador (
-  DNI int NOT NULL,
   NumeroRol int NOT NULL,
   NumeroLicenciaEntrenador int NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol),
+  PRIMARY KEY (NumeroRol),
   UNIQUE (NumeroLicenciaEntrenador),
-  CONSTRAINT FK_Entrenador_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol)
+  CONSTRAINT FK_Entrenador_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Rol(NumeroRol)
 );
 
 CREATE TABLE Categoria (
@@ -185,7 +181,6 @@ CREATE TABLE Categoria (
 );
 
 CREATE TABLE Jockey (
-  DNI int NOT NULL, 
   NumeroRol int NOT NULL, 
   TipoLicenciaJockey varchar(100) NOT NULL, 
   NumeroLicenciaJockey int NOT NULL,
@@ -194,35 +189,32 @@ CREATE TABLE Jockey (
   HipodromoLicencia varchar(100) NOT NULL,
   UNIQUE (TipoLicenciaJockey, NumeroLicenciaJockey),
   PRIMARY KEY (NumeroRol),
-  CONSTRAINT FK_Jockey_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Rol(DNI, NumeroRol),
+  CONSTRAINT FK_Jockey_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Rol(NumeroRol),
   CONSTRAINT FK_Jockey_NombreCategoria FOREIGN KEY (NombreCategoria) REFERENCES Categoria(NombreCategoria),
   CONSTRAINT FK_Jockey_HipodromoLicencia FOREIGN KEY (HipodromoLicencia) REFERENCES Hipodromo(NombreHipodromo)
 );
 
 CREATE TABLE Possee (
-  DNI int NOT NULL, 
   NumeroRol int NOT NULL, 
   NumeroEquino int NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol, NumeroEquino),
-  CONSTRAINT FK_Posee_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Propietario(DNI, NumeroRol),
+  PRIMARY KEY (NumeroRol, NumeroEquino),
+  CONSTRAINT FK_Posee_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Propietario(NumeroRol),
   CONSTRAINT FK_Posee_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino (NumeroEquino)
 );
 
 CREATE TABLE Cuida (
-  DNI int NOT NULL, 
   NumeroRol int NOT NULL, 
   NumeroEquino int NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol, NumeroEquino),
-  CONSTRAINT FK_Cuida_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Cuidador(DNI, NumeroRol),
+  PRIMARY KEY (NumeroRol, NumeroEquino),
+  CONSTRAINT FK_Cuida_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Cuidador(NumeroRol),
   CONSTRAINT FK_Cuida_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino (NumeroEquino)
 );
 
 CREATE TABLE Entrena (
-  DNI int NOT NULL, 
   NumeroRol int NOT NULL, 
   NumeroEquino int NOT NULL,
-  PRIMARY KEY (DNI, NumeroRol, NumeroEquino),
-  CONSTRAINT FK_Entrena_DNINumeroRol FOREIGN KEY (DNI, NumeroRol) REFERENCES Entrenador(DNI, NumeroRol),
+  PRIMARY KEY (NumeroRol, NumeroEquino),
+  CONSTRAINT FK_Entrena_NumeroRol FOREIGN KEY (NumeroRol) REFERENCES Entrenador(NumeroRol),
   CONSTRAINT FK_Entrena_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino (NumeroEquino)
 );
 
