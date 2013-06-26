@@ -1,8 +1,10 @@
-//c) Yeguas de 4 y 5 años perdedoras, que habiendo corrido no hayan clasificado 2a, 3a ó 4a en los Hipódromos de Palermo
-//ó San Isidro en sus tres últimas actuaciones. (Pueden participar las S.P.C. que hayan corrido esta categoría siempre y
-//cuANDo no hayan obtenido esos puestos en condicionales u otro tipo de carreras, también quedan excluidos los
-//ejemplares que en sus últimas cinco (5) actuaciones hayan participado en carreras clásicas). Peso 4 años 57 kilos; 5 años
-//55kilos.
+/*
+c) Yeguas de 4 y 5 años perdedoras, que habiendo corrido no hayan clasificado 2a, 3a ó 4a en los Hipódromos de Palermo
+ó San Isidro en sus tres últimas actuaciones. (Pueden participar las S.P.C. que hayan corrido esta categoría siempre y
+cuANDo no hayan obtenido esos puestos en condicionales u otro tipo de carreras, también quedan excluidos los
+ejemplares que en sus últimas cinco (5) actuaciones hayan participado en carreras clásicas). Peso 4 años 57 kilos; 5 años
+55kilos.
+*/
 
 SELECT 
     'Pasa condicion'
