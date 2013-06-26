@@ -1,8 +1,8 @@
-drop database hipodromo;
+DROP DATABASE IF EXISTS hipodromo;
 
-create database hipodromo default character set utf8;
+CREATE DATABASE hipodromo DEFA CHARACTER SET utf8;
 
-use hipodromo;
+USE hipodromo;
 
 CREATE TABLE Hipodromo (
   NombreHipodromo varchar(100) NOT NULL,
