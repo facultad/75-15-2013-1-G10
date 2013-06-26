@@ -137,8 +137,7 @@ CREATE TABLE StudEquino (
   NombreStud varchar(100) NULL,
   PRIMARY KEY (NumeroEquino, FechaDesde),
   CONSTRAINT FK_StudEquino_NumeroEquino FOREIGN KEY (NumeroEquino) REFERENCES Equino(NumeroEquino),
-  CONSTRAINT FK_StudEquino_NombreStud FOREIGN KEY (NombreStud) REFERENCES Stud(NombreStud),
-  
+  CONSTRAINT FK_StudEquino_NombreStud FOREIGN KEY (NombreStud) REFERENCES Stud(NombreStud)
 );
 
 CREATE TABLE Persona (
